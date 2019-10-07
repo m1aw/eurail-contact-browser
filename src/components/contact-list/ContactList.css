@@ -1,0 +1,42 @@
+.ContactList {
+    background: #EEE;
+    max-width: 960px;
+    margin: auto;
+}
+
+.ContactList-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+
+ul.ContactList-list > * {
+    flex: 50%;
+    width: 50%;
+    flex-grow: 0;
+}
+
+.ContactList-tabs-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.ContactList-tabs-row > * {
+    flex: 1 0;
+}
+
+.ContactList-TabButton {
+    border: #CCC 1px solid;
+    padding: 5px;
+    border-right: none;
+}
+
+.ContactList-TabButton:disabled {
+    color: #aaa;
+}
+
+
+.ContactList-TabButton:last-child {
+    border-right:  #CCC 1px solid;
+}

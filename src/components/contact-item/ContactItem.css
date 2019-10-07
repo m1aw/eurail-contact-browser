@@ -1,0 +1,18 @@
+.ContactItem {
+    display: block;
+}
+
+.ContactItem button {
+    width: 100%;
+}
+
+.ContactItem-li {
+    list-style-type: none;
+    text-align: left;
+    margin: 15px;
+    border-bottom: #CCC 1px solid;
+}
+
+.ContactItem-surname {
+    text-transform: uppercase;
+}
