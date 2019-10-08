@@ -15,14 +15,16 @@ export const ContactItem = ({contact}) => {
     }
 
     return (
-        <div>
-            <li className={'ContactItem-li'}>
-                <button className={'ContactItem'} onClick={handleClick}>
-                    {contact.name.first},
-                    <span className={'ContactItem-surname'}>{contact.name.last}</span>
-                </button>
+        <li className={'ContactItem-li'}>
+            <div className={'ContactItem-container'}>
+                <div className={'ContactItem'}>
+                    <button onClick={handleClick}>
+                        {contact.name.first},
+                        <span className={'ContactItem-surname'}>{contact.name.last}</span>
+                    </button>
+                </div>
                 {show && <ContactCard contact={contact}/>}
-            </li>
-        </div>
+            </div>
+        </li>
     )
 }

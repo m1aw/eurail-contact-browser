@@ -1,16 +1,23 @@
 .ContactItem {
     display: block;
-}
-
-.ContactItem button {
     width: 100%;
+    border-bottom: #CCC 1px solid;
 }
 
 .ContactItem-li {
     list-style-type: none;
     text-align: left;
-    margin: 15px;
-    border-bottom: #CCC 1px solid;
+    padding: 15px;
+    position: relative;
+}
+
+.ContactItem-container {
+    position: relative;
+}
+
+.ContactItem:hover {
+    color: darkorange;
+    cursor: pointer;
 }
 
 .ContactItem-surname {

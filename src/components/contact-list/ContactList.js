@@ -8,10 +8,14 @@ import config from "./config";
 const http = new HttpService();
 export const ExpandedContactContext = React.createContext();
 
-const ContactListTabButton = ({tab, count, handleClick}) => {
+const ContactListTabButton = ({tab, count, handleClick, active}) => {
+    const classNames = 'ContactList-TabButton' + (active ? ' active': '')
+    console.log(classNames)
     return (
-        <button onClick={handleClick} className={'ContactList-TabButton'} disabled={count < 1}>
-            {tab}<sub>{count}</sub>
+        <button onClick={handleClick}
+                className={classNames}
+                disabled={count < 1}>
+            {tab} <sub>{count}</sub>
         </button>
     )
 }
@@ -26,9 +30,9 @@ export const ContactList = () => {
             const tabs = {}
             config.tabs.forEach(tabKey => tabs[tabKey] = []);
             contacts.forEach((contact) => {
-                    const tab = tabs[contact.name.last.substring(0,1).toLocaleLowerCase()]
-                    tab && tab.push(contact)
-                })
+                const tab = tabs[contact.name.last.substring(0, 1).toLocaleLowerCase()]
+                tab && tab.push(contact)
+            })
             return tabs
         }
 
@@ -45,7 +49,12 @@ export const ContactList = () => {
                 <div className={'ContactList'}>
                     <div className={'ContactList-tabs-row'}>
                     {tabs && Object.keys(tabs).map((key, i) =>
-                        <ContactListTabButton key={key} tab={key} count={tabs[key].length} handleClick={() => setSelectedTab(key)}/>
+                        <ContactListTabButton
+                            key={key} tab={key}
+                            count={tabs[key].length}
+                            handleClick={() => setSelectedTab(key)}
+                            active={key === selectedTab}
+                        />
                     )}
                     </div>
                     <ul className={'ContactList-list'}>

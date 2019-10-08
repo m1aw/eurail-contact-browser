@@ -53,6 +53,9 @@ export const ContactCard = ({contact}) => {
                     </tbody>
                 </table>
             </div>
+            <div className={'ContactCard-username'}>
+                USERNAME {contact.login.username}
+            </div>
         </div>
     )
 }
