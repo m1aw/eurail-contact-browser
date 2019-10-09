@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import './ContactCard.css'
-import {ExpandedContactContext} from "../contact-list/ContactList";
+import {ExpandedContactContext} from "../../services/providers";
 import {Avatar} from "../avatar/Avatar"
 import fontawesome from '@fortawesome/fontawesome'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";

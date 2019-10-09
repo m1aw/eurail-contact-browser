@@ -1,18 +1,16 @@
 import React, {useContext} from 'react';
 import './ContactItem.css'
 import {ContactCard} from "../contact-card/ContactCard";
-import {ExpandedContactContext} from "../contact-list/ContactList";
+import {ExpandedContactContext} from "../../services/providers";
 
+export const toggleNextContact = (contact,expandedContact) => expandedContact === contact ? undefined : contact;
 
 export const ContactItem = ({contact}) => {
     const [selectedContact, setSelectedContact] = useContext(ExpandedContactContext);
 
     const show = contact === selectedContact;
 
-    const handleClick = () => {
-        const nextContact = selectedContact === contact ? undefined : contact
-        setSelectedContact(nextContact)
-    }
+    const handleClick = () => setSelectedContact(toggleNextContact(contact,selectedContact))
 
     return (
         <li className={'ContactItem-li'}>

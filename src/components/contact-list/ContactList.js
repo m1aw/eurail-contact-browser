@@ -2,11 +2,11 @@ import React, {useState, useEffect} from 'react'
 import './ContactList.css'
 import {HttpService} from "../../services/http";
 import {ContactItem} from "../contact-item/ContactItem";
+import {ExpandedContactContext} from "../../services/providers";
 
-import config from "./config";
+import config from "../../config";
 
 const http = new HttpService();
-export const ExpandedContactContext = React.createContext();
 
 const ContactListTabButton = ({tab, count, handleClick, active}) => {
     const classNames = 'ContactList-TabButton' + (active ? ' active': '')
