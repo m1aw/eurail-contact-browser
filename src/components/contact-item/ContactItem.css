@@ -15,7 +15,7 @@
     position: relative;
 }
 
-.ContactItem:hover {
+.ContactItem button:hover {
     color: darkorange;
     cursor: pointer;
 }
